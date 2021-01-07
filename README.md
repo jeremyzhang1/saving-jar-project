@@ -11,9 +11,7 @@ Then, run
 
 `npm install bootstrap`
 
-Then create a `config` folder and `fire.js` in that folder
-
-Ask Jeremy for the secret stuff that goes in this file
+Then, ask Jeremy for the secret stuff that goes in the `fire.js` file within the `config` folder
 
 To start the development server, run
 
