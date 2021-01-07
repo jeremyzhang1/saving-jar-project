@@ -56,9 +56,8 @@ function PageHome() {
       
       <div>
         <h1> My Goals</h1>
-
         <Link to="/groups">
-            <button type="button">
+          <button type="button">
               Join a Goal
           </button>
         </Link>
