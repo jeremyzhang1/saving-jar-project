@@ -28,10 +28,14 @@ class GroupPreview extends Component {
       fadeIn: true,
       fadeInSpeed: 500
     }
+    const buttonStyle = {
+      backgroundColor: "#ffffff",
+      borderRadius: "20px"
+    }
 
     return (
       <div>
-        <button onClick={this.openPopupbox}>Details</button>
+        <button onClick={this.openPopupbox} style={buttonStyle}>Details</button>
         <PopupboxContainer { ...popupboxConfig } />
       </div>
     )

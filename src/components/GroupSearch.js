@@ -12,18 +12,17 @@ class GroupSearch extends React.Component {
     this.setState({value: event.target.value});
   }
 
-  handleSubmit(event) {
-    //alert('User searched for group: ' + this.state.value);
-    event.preventDefault();
-  }
-
   render() {
+    const buttonStyle = {
+      backgroundColor: "#ffffff",
+      borderRadius: "20px"
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <input placeholder="Search for Goals..." type="text" value={this.state.value} onChange={this.handleChange} />
+          <input style={buttonStyle} placeholder="Search for Goals..." type="text" value={this.state.value} onInput={this.handleChange}/>
         </label>
-        <input type="submit" value="Submit" />
       </form>
     );
   }

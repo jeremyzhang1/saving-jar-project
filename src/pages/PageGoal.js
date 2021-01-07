@@ -1,4 +1,3 @@
-import GoalPig from "../components/progressPigs/GoalPig.js";
 
 import React from "react";
 
@@ -44,11 +43,6 @@ function PageGoal() {
         <p> Date Created: {goalDetails.createDate}</p>
         <p> {users.length} currently working on this goal | {goalDetails.userscompleted} have completed this goal</p>
       </div>
-      
-        <GoalPig 
-          others = {users}
-          thisUser = {userSample}
-        ></GoalPig>
     </div>
   );
 }
