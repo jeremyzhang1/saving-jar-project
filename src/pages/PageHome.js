@@ -1,5 +1,7 @@
 import React from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
+import { Route, Switch, Redirect, Link} from 'react-router-dom';
+
 
 const userData = [
   { group: "disney", 
@@ -54,7 +56,12 @@ function PageHome() {
       
       <div>
         <h1> My Goals</h1>
-        <button> Join A Group </button>
+
+        <Link to="/groups">
+            <button type="button">
+              Join a Goal
+          </button>
+        </Link>
         {userData.map((item, index) => (
           <DashboardPig key ={index}  
           bgcolor = {item.bgcolor} 
