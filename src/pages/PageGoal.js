@@ -1,5 +1,3 @@
-import GoalPig from "../components/progressPigs/GoalPig.js";
-
 import React from "react";
 
 const users = [
@@ -56,11 +54,6 @@ function PageGoal() {
         <p> {users.length} currently working on this goal | {goalDetails.userscompleted} have completed this goal</p>
 >>>>>>> c9cfb06361a0ab23255f67fe4ef6600988400492
       </div>
-      
-        <GoalPig 
-          others = {users}
-          thisUser = {userSample}
-        ></GoalPig>
     </div>
   );
 }
