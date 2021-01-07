@@ -1,7 +1,11 @@
+import GoalPig from "../components/progressPigs/GoalPig.js";
+
+import React from "react";
+
 function PageGoal() {
   return (
     <div>
-        Find Goals
+        <GoalPig></GoalPig>
     </div>
   );
 }
