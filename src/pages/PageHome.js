@@ -42,6 +42,10 @@ function PageHome() {
         <p> uncategoried money: </p>
         <button> Upload Money</button>
       </div>
+      
+      <div>
+        <h1> My Groups</h1>
+        <button> Join A Group </button>
         {userData.map((item, index) => (
           <DashboardPig key ={index}  
           bgcolor = {item.bgcolor} 
@@ -50,6 +54,8 @@ function PageHome() {
           completed = {item.completed}>
           </DashboardPig>        
         ))}
+      </div>
+        
          
     </div>
 
