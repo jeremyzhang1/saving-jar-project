@@ -13,15 +13,16 @@ class GroupSearch extends React.Component {
   }
 
   render() {
-    const buttonStyle = {
+    const formStyle = {
       backgroundColor: "#ffffff",
-      borderRadius: "20px"
+      borderRadius: "20px",
+      //submissionfield { width: 90px; height: 390px; border: 1px solid #999999; padding: 5px; }
     }
 
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <input style={buttonStyle} placeholder="Search for Goals..." type="text" value={this.state.value} onInput={this.handleChange}/>
+          <input style={formStyle} placeholder="Search for Goals..." type="text" value={this.state.value} onInput={this.handleChange}/>
         </label>
       </form>
     );
