@@ -6,6 +6,7 @@ function PageGroups() {
     <div>
         <h1>Find Goals</h1>
         <GroupSearch/>
+        <button>+Create a Goal</button>
         <GroupBox/>
     </div>
   );
