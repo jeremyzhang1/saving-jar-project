@@ -17,8 +17,9 @@
     "react-popupbox": "^2.0.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "styled-components": "^4.4.1",
+    "reactjs-popup": "^2.0.4",
     "simple-react-lightbox": "^3.5.2",
+    "styled-components": "^4.4.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
