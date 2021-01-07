@@ -5,9 +5,29 @@ import PageHome from './pages/PageHome';
 import PageGroups from './pages/PageGroups';
 import PageGoal from './pages/PageGoal';
 
+import Navbar from 'react-bootstrap/Navbar';
+var Bootstrap = require('react-bootstrap')
+
+/*const navbar = {
+  backgroundColor: black,
+  -webkit-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75),
+  -moz-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75),
+  box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75),
+  
+  font-size: 1.2em,
+}*/
 function App() {
+  
   return (
     <div className="App">
+      <nav className='navigation' class="navbar navbar-expand-md fixed-top">
+    	  	<ul>
+        		<li><a href="/"> Login</a></li>
+			      <li><a href="/home"> PageHome</a></li>
+			      <li><a href="/groups">PageGroups</a></li>
+            <li><a href="/goal">Goal Page</a></li>
+    		  </ul>
+		    </nav>
       <Switch>
         <Route exact path="/" component={PageLogin} />
         <Route exact path="/home" component={PageHome} />
