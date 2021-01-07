@@ -2,13 +2,15 @@ import React from "react";
 import GroupPreview from '../components/GroupPreview';
 
 function GroupBox() {
-  const buttonStyle = {
+  const boxStyle = {
     backgroundColor: "#ffffff",
-    borderRadius: "20px"
+    height: 400,
+    borderRadius: "20px",
+    marginBottom: "100px"
   }
 
   return (
-    <div style={buttonStyle}>
+    <div style={boxStyle}>
       <h2>Group Title</h2>
       <GroupPreview/>
     </div> 

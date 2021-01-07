@@ -2,14 +2,18 @@ import GroupSearch from '../components/GroupSearch';
 import GroupBox from '../components/GroupBox';
 import { setConfiguration, Container, Row, Col } from 'react-grid-system';
 
-setConfiguration({ gutterWidth: 20 });
+setConfiguration({ gutterWidth: 30 });
 
 function PageGroups() {
   const groupStyle={
     backgroundColor: "#c8e1ef"
   }
-  const buttonStyle = {
-    backgroundColor: "#ffffff",
+  const createButtonStyle = {
+    backgroundColor: "#0e71a9",
+    color: "#ffffff",
+    fontSize: 16,
+    height: 30,
+    width: 160,
     borderRadius: "20px"
   }
 
@@ -17,7 +21,7 @@ function PageGroups() {
     <div style={groupStyle}>
         <h1>Find Goals</h1>
         <GroupSearch/>
-        <button style={buttonStyle}>+ Create a Goal</button>
+        <button style={createButtonStyle}>+ Create a Goal</button>
         <Container>
           <Row>
             <Col sm={4}>

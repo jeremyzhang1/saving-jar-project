@@ -8,7 +8,11 @@ import "react-popupbox/dist/react-popupbox.css"
 class GroupPreview extends Component {
   openPopupbox() {
     const buttonStyle = {
-      backgroundColor: "#ffffff",
+      backgroundColor: "#0e71a9",
+      color: "#ffffff",
+      fontSize: 16,
+      height: 30,
+      width: 160,
       borderRadius: "20px"
     }
     const content = (
@@ -33,7 +37,12 @@ class GroupPreview extends Component {
       fadeInSpeed: 500
     }
     const buttonStyle = {
-      backgroundColor: "#ffffff",
+      backgroundColor: "#0e71a9",
+      color: "#ffffff",
+      fontSize: 16,
+      height: 30,
+      width: 120,
+      marginBottom: "10px",
       borderRadius: "20px"
     }
 
