@@ -1,7 +1,12 @@
+import GroupSearch from '../components/GroupSearch';
+import GroupBox from '../components/GroupBox';
+
 function PageGroups() {
   return (
     <div>
-        Groups
+        <h1>Find Goals</h1>
+        <GroupSearch/>
+        <GroupBox/>
     </div>
   );
 }

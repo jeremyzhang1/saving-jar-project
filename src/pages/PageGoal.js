@@ -1,7 +1,7 @@
 function PageGoal() {
   return (
     <div>
-        Find Goals
+        Goal
     </div>
   );
 }

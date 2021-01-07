@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
+import SimpleReactLightbox from 'simple-react-lightbox'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <SimpleReactLightbox>
+      <Router>
+        <App />
+      </Router>
+    </SimpleReactLightbox>
   </React.StrictMode>,
   document.getElementById('root')
 );
