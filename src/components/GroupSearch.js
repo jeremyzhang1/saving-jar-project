@@ -15,8 +15,11 @@ class GroupSearch extends React.Component {
   render() {
     const formStyle = {
       backgroundColor: "#ffffff",
+      marginBottom: "10px",
       borderRadius: "20px",
-      //submissionfield { width: 90px; height: 390px; border: 1px solid #999999; padding: 5px; }
+      fontSize: 16,
+      height: 30,
+      width: 500
     }
 
     return (
