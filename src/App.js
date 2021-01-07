@@ -1,14 +1,13 @@
+
 import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import PageLogin from './pages/PageLogin';
 import PageHome from './pages/PageHome';
-import PageDashboard from './pages/PageDashboard';
 import PageGroups from './pages/PageGroups';
+import PageGoal from './pages/PageGoal';
+
 import Navbar from 'react-bootstrap/Navbar';
 var Bootstrap = require('react-bootstrap')
-
-// import bootstrap 
-
 
 /*const navbar = {
   backgroundColor: black,
@@ -26,15 +25,15 @@ function App() {
     	  	<ul>
         		<li><a href="/"> Login</a></li>
 			      <li><a href="/home"> PageHome</a></li>
-			      <li><a href="/dashboard">PageDashboard</a></li>
 			      <li><a href="/groups">PageGroups</a></li>
+            <li><a href="/goal">Goal Page</a></li>
     		  </ul>
 		    </nav>
       <Switch>
         <Route exact path="/" component={PageLogin} />
         <Route exact path="/home" component={PageHome} />
-        <Route exact path="/dashboard" component={PageDashboard} />
         <Route exact path="/groups" component={PageGroups} />
+        <Route exact path="/goal" component={PageGoal} />
         <Route component={() => <Redirect to="/" />} />
       </Switch>
     </div>
