@@ -21,6 +21,14 @@ const userData = [
   }
 ]
 
+const userInfo = {
+  id: '',
+  groups: userData, 
+  totalInAccount: 100, 
+  totalSaved: 70,
+  totalUncat: 30,
+}
+
 const testData =
   { bgcolor: "#6a1b9a", 
   total: 100, 
@@ -38,13 +46,14 @@ function PageHome() {
       <h1>Dashboard</h1>
       <div> 
         <h2>Overview</h2>
-        <p> Total Savings: </p> 
-        <p> uncategoried money: </p>
+        <p> Total Savings: ${userInfo.totalSaved}</p> 
+        <p> uncategoried money: ${userInfo.totalUncat}</p>
+        <button> Move Money to Goal</button>
         <button> Upload Money</button>
       </div>
       
       <div>
-        <h1> My Groups</h1>
+        <h1> My Goals</h1>
         <button> Join A Group </button>
         {userData.map((item, index) => (
           <DashboardPig key ={index}  

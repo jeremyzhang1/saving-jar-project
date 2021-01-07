@@ -17,7 +17,7 @@ const DashboardPig = (props) => {
           <p> ${props.total} to go</p>
 
         <ProgressBar bgcolor={props.bgcolor} completed={props.completed} />
-    </div>
+        </div>
     )
 
 }
