@@ -24,8 +24,8 @@ function App() {
     	  	<ul>
         		<li><a href="/"> Login</a></li>
 			      <li><a href="/home"> PageHome</a></li>
-			      <li><a href="/dashboard">PageDashboard</a></li>
 			      <li><a href="/groups">PageGroups</a></li>
+            <li><a href="/goal">Goal Page</a></li>
     		  </ul>
 		    </nav>
       <Switch>
