@@ -1,5 +1,7 @@
 import React from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
+import { Route, Switch, Redirect, Link} from 'react-router-dom';
+
 
 const userData = [
   { group: "disney", 
@@ -21,6 +23,14 @@ const userData = [
   }
 ]
 
+const userInfo = {
+  id: '',
+  groups: userData, 
+  totalInAccount: 100, 
+  totalSaved: 70,
+  totalUncat: 30,
+}
+
 const testData =
   { bgcolor: "#6a1b9a", 
   total: 100, 
@@ -38,14 +48,25 @@ function PageHome() {
       <h1>Dashboard</h1>
       <div> 
         <h2>Overview</h2>
-        <p> Total Savings: </p> 
-        <p> uncategoried money: </p>
+        <p> Total Savings: ${userInfo.totalSaved}</p> 
+        <p> uncategoried money: ${userInfo.totalUncat}</p>
+        <button> Move Money to Goal</button>
         <button> Upload Money</button>
       </div>
       
       <div>
-        <h1> My Groups</h1>
-        <button> Join a Group </button>
+        <h1> My Goals</h1>
+<<<<<<< HEAD
+
+        <Link to="/groups">
+            <button type="button">
+              Join a Goal
+          </button>
+        </Link>
+=======
+        <button> Join A Group </button>
+
+>>>>>>> c9cfb06361a0ab23255f67fe4ef6600988400492
         {userData.map((item, index) => (
           <DashboardPig key ={index}  
           bgcolor = {item.bgcolor} 
