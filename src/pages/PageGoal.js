@@ -1,5 +1,3 @@
-import GoalPig from "../components/progressPigs/GoalPig.js";
-
 import React from "react";
 
 const users = [
@@ -49,11 +47,6 @@ function PageGoal() {
 
         <button> Add Money to My Goal</button>
       </div>
-      
-        <GoalPig 
-          others = {users}
-          thisUser = {userSample}
-        ></GoalPig>
     </div>
   );
 }
