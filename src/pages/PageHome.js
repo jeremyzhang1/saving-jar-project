@@ -1,6 +1,26 @@
 import React from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
 
+const userData = [
+  { group: "disney", 
+    bgcolor: "#6a1b9a", 
+    total: 100, 
+    current: 60, 
+    completed: 60,
+    startdate:'', 
+    enddate:'',
+  }, 
+  { 
+    group: "monthly payments",
+    bgcolor: "#17641A", 
+    total: 200, 
+    current: 10, 
+    completed: 5,
+    startdate:'', 
+    enddate:'',
+  }
+]
+
 const testData =
   { bgcolor: "#6a1b9a", 
   total: 100, 
@@ -15,14 +35,25 @@ const testData =
 function PageHome() {
   return (
     <div>
-        Home
-        <DashboardPig myPigTest 
-          bgcolor = {testData.bgcolor} 
-          current = {testData.current}
-          total = {testData.total} 
-          completed = {testData.completed}>
-          </DashboardPig>
+      <h1>Dashboard</h1>
+      <div> 
+        <h2>Overview</h2>
+        <p> Total Savings: </p> 
+        <p> uncategoried money: </p>
+        <button> Upload Money</button>
+      </div>
+        {userData.map((item, index) => (
+          <DashboardPig key ={index}  
+          bgcolor = {item.bgcolor} 
+          current = {item.current}
+          total = {item.total} 
+          completed = {item.completed}>
+          </DashboardPig>        
+        ))}
+         
     </div>
+
+    
   );
 }
 
