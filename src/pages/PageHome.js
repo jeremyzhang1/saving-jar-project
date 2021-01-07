@@ -45,7 +45,7 @@ function PageHome() {
       
       <div>
         <h1> My Groups</h1>
-        <button> Join A Group </button>
+        <button> Join a Group </button>
         {userData.map((item, index) => (
           <DashboardPig key ={index}  
           bgcolor = {item.bgcolor} 
