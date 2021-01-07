@@ -2,6 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Important Setup (Please do this)
+
+Make sure you have node.js installed  
+Then, run 
+
+`npm install --save firebase`
+
+`npm install bootstrap`
+
+Then create a `config` folder and `fire.js` in that folder
+
+Ask Jeremy for the secret stuff that goes in this file
+
+To start the development server, run
+
+`npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
