@@ -14,7 +14,8 @@ function PageGroups() {
     fontSize: 16,
     height: 30,
     width: 160,
-    borderRadius: "20px"
+    borderRadius: "20px",
+    marginBottom: "10px"
   }
 
   return (
