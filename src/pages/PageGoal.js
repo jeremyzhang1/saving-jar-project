@@ -24,10 +24,7 @@ const goalDetails = {
   image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/2/1440/540/75/dam/disney-world/admission/WDW_SWGE_1440x540.png?1605208793974',
   imageAlt: 'disney!',
   createDate: '1/17/2020',
-<<<<<<< HEAD
   description: 'This is a description of the group. We all want to go to disneyland! Therefore, we should all really try really hard to save for disneyland. And like, we should also really encourage each other to save to go to disneyland. yeah. and im going to keep going on about diensy land. Go disney! ',
-=======
->>>>>>> c9cfb06361a0ab23255f67fe4ef6600988400492
   users: users, 
   usersworking: users.length, //need to instead do completed
   userscompleted: 10,
