@@ -41,15 +41,11 @@ function PageGoal() {
         <h1> Disney World</h1>
         <p> Created By: {goalDetails.creator}</p>
         <p> Date Created: {goalDetails.createDate}</p>
-<<<<<<< HEAD
         <p> You and {users.length} other users currently working on this goal | {goalDetails.userscompleted} users have completed this goal</p>
 
         <p> {goalDetails.description}</p>
 
         <button> Add Money to My Goal</button>
-=======
-        <p> {users.length} currently working on this goal | {goalDetails.userscompleted} have completed this goal</p>
->>>>>>> c9cfb06361a0ab23255f67fe4ef6600988400492
       </div>
     </div>
   );
