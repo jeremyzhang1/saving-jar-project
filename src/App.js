@@ -1,12 +1,14 @@
-
+import React from 'react'
 import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import PageLogin from './pages/PageLogin';
 import PageHome from './pages/PageHome';
 import PageGroups from './pages/PageGroups';
 import PageGoal from './pages/PageGoal';
+import BootstrapNavbar from './components/NavBar.js';
 
-import Navbar from 'react-bootstrap/Navbar';
+
+//import Navbar from 'react-bootstrap/Navbar';
 var Bootstrap = require('react-bootstrap')
 
 /*const navbar = {
@@ -18,24 +20,11 @@ var Bootstrap = require('react-bootstrap')
   font-size: 1.2em,
 }*/
 function App() {
+
   
   return (
     <div className="App">
-      <nav className='navigation' class="navbar navbar-expand-md fixed-top">
-    	  	<ul>
-        		<li><a href="/"> Login</a></li>
-			      <li><a href="/home"> PageHome</a></li>
-			      <li><a href="/groups">PageGroups</a></li>
-            <li><a href="/goal">Goal Page</a></li>
-    		  </ul>
-		    </nav>
-      <Switch>
-        <Route exact path="/" component={PageLogin} />
-        <Route exact path="/home" component={PageHome} />
-        <Route exact path="/groups" component={PageGroups} />
-        <Route exact path="/goal" component={PageGoal} />
-        <Route component={() => <Redirect to="/" />} />
-      </Switch>
+      <BootstrapNavbar/>
     </div>
   );
 }
