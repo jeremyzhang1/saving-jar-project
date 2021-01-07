@@ -1,4 +1,7 @@
 import React from "react";
+import '../components/PageGoal.css';
+import {Helmet} from 'react-helmet';
+
 
 const users = [
   {id : 1, percentage : 20}, 
@@ -33,6 +36,9 @@ const goalDetails = {
 function PageGoal() {
   return (
     <div>
+      <Helmet>
+          <style>{'body { background-color: #C8E1EF; }'}</style>
+      </Helmet>
       <div>
         <img 
             src = {goalDetails.image}
