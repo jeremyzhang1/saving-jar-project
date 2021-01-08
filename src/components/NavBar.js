@@ -26,10 +26,11 @@ class BootstrapNavbar extends React.Component{
                     <Navbar bg="dark" variant="pills" expand="lg" sticky="top" style={{position: "absolute", width: "100%"}}>
                         <Nav className='navigation' class="navbar navbar-expand-md navbar-fixed-top">
 
-                            <Nav.Link href="/login">Logout</Nav.Link> 
+                            <Nav.Link onSelect={this.logout} href="/login">Logout</Nav.Link> 
                             <Nav.Link id="ghome" href="/home"  >Home</Nav.Link>
                             <Nav.Link id="bgroup" href="/groups" >Find a Group</Nav.Link>
                             <Nav.Link href="/goal">Goal Page</Nav.Link>
+                            {/* <Button bsStyle="primary">Login</Button> */}
                         </Nav>
                     </Navbar>
                             <br />
