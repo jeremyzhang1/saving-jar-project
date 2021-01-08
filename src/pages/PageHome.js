@@ -1,6 +1,6 @@
 import React from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
-import { Route, Switch, Redirect, Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 const userData = [

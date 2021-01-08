@@ -1,7 +1,7 @@
 //import { render } from “@testing-library/react”;
 import React from "react";
 import ProgressBar from "./ProgressBar.js";
-import pigImage from "../../assets/pig.png";
+//import pigImage from "../../assets/pig.png";
 
 //const testData = { bgcolor: “#6A1B9A”, completed: 60 };
 
