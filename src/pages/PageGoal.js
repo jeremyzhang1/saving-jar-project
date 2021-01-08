@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {Helmet} from 'react-helmet';
+//import React, {Component} from "react";
+//import {Helmet} from 'react-helmet';
 import GoalPig from '../components/progressPigs/GoalPig.js'
 import "./PageGoal.css";
 //import '/Users/carolynqu/c1_materials/saving-jar-project/src/pages/PageGoal.css'
@@ -36,6 +36,15 @@ const goalDetails = {
 }
 
 function PageGoal() {
+  const addButtonStyle = {
+    backgroundColor: "#3a693f",
+    color: "#ffffff",
+    fontSize: 20,
+    height: 50,
+    width: 220,
+    borderRadius: "20px",
+    marginBottom: "10px"
+  }
   return (
     <div class = "larger">
       {/* <Helmet>
@@ -44,7 +53,7 @@ function PageGoal() {
       <div class = "larger">
         <div class = "cover">
           <img 
-            class= "coverphoto"
+            class = "coverphoto"
             src = {goalDetails.image}
             alt = {goalDetails.imageAlt}
           />
@@ -57,12 +66,13 @@ function PageGoal() {
           <p class = "descr"> You and {users.length} other users currently working on this goal | {goalDetails.userscompleted} users have completed this goal</p>
           <p claas = "descr"> <b>Goal Description:</b> {goalDetails.description}</p>
         </div>
-          <button class = "uploadbut" > Add Money to My Goal</button>
+          {/* <button class = "uploadbut" > Add Money to My Goal</button> */}
           <div class = "boxStyle">
             <h2>My Progress:</h2>
             <GoalPig others = {users} thisUser = {userSample}/>
-            <p>You have saved: </p>
-            <p>You still need to save: </p>
+            <p style={{color: "#3A693F"}}>You have saved: ${userSample.current}</p>
+            <p style={{color: "#3A693F"}}>You still need to save: ${userSample.total - userSample.current}</p>
+            <button style={addButtonStyle}> Add To Your Goal</button>
           </div>
       </div>
     </div>

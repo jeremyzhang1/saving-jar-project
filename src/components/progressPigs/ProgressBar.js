@@ -13,6 +13,7 @@ const ProgressBar = (props) => {
     marginRight: 50,
     marginTop: '-7%',
     marginBottom: '10px',
+    position: 'relative'
   }
   const fillerStyles = {
     height: '100%',
@@ -41,8 +42,9 @@ const ProgressBar = (props) => {
     position: 'absolute',
     textAlign: 'center',
     marginLeft: 50,
-    top: '37%',
-    left: '33%'
+    fontSize: 60,
+    top: '43%',
+    left: '38%'
     
   }
   const savedStyles = {
@@ -64,11 +66,12 @@ const ProgressBar = (props) => {
     <div>
       <div class="container pig-stats" style={pigStyles}>
               <img src={pigImage} style={pigImgStyles}/>
-              <p class="centered" style={compStyles}> {props.completed}% complete </p>
-              <p class="centered" style={savedStyles}> ${props.current} saved </p>
-              <p class="centered" style={totalStyles}> ${props.total} to go </p>
+              <p class="centered" style={compStyles}> {props.completed}%</p>
+              {/* <p class="centered" style={savedStyles}> ${props.current} saved </p>
+              <p class="centered" style={totalStyles}> ${props.total} to go </p> */}
       </div>
       <div style={containerStyles}>
+      {props.children}
         <div style={fillerStyles}>
           <span style={labelStyles}>{`${completed}%`}</span>
         </div>
