@@ -9,7 +9,7 @@ import BootstrapNavbar from './components/NavBar.js';
 
 
 //import Navbar from 'react-bootstrap/Navbar';
-var Bootstrap = require('react-bootstrap')
+//var Bootstrap = require('react-bootstrap')
 
 /*const navbar = {
   backgroundColor: black,

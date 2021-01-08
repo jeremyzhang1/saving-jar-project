@@ -3,7 +3,7 @@ import DashboardPig from "../components/progressPigs/DashboardPig.js";
 import {Link} from 'react-router-dom';
 import '../components/PageHome.css';
 import {Helmet} from 'react-helmet';
-
+import { Link} from 'react-router-dom';
 
 
 const userData = [
@@ -74,9 +74,8 @@ function PageHome() {
       
       <div>
         <h1> My Goals</h1>
-
         <Link to="/groups">
-            <button style = {largeButtonStyle} type="button">
+          <button type="button">
               Join a Goal
           </button>
         </Link>

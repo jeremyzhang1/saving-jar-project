@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    useParams,
+    Redirect,
   } from "react-router-dom";
 import { Navbar,Nav} from 'react-bootstrap'
 import PageLogin from '../pages/PageLogin';
@@ -30,10 +30,11 @@ class BootstrapNavbar extends React.Component{
                     </Navbar>
                             <br />
                     <Switch>
-                        <Route exact path="/" component={PageLogin} />
+                        <Route exact path="/login" component={PageLogin} />
                         <Route exact path="/home" component={PageHome} />
                         <Route exact path="/groups" component={PageGroups} />
                         <Route exact path="/goal" component={PageGoal} />
+                        <Route component={() => <Redirect to="/home" />} />
                     </Switch>
                 </Router>
             </div>

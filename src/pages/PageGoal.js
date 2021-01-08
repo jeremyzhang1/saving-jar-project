@@ -64,7 +64,6 @@ function PageGoal() {
         <p> Created By: {goalDetails.creator}</p>
         <p> Date Created: {goalDetails.createDate}</p>
         <p> You and {users.length} other users currently working on this goal | {goalDetails.userscompleted} users have completed this goal</p>
-
         <p> {goalDetails.description}</p>
 
         <button style={createButtonStyle}> Add Money to My Goal</button>
