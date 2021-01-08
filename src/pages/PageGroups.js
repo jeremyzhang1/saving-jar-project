@@ -13,6 +13,7 @@ const users = [
 
 const goalDetails = [
   {
+  id: 'first',
   title: 'Trip to Disneyworld!',
   creator: 'John Smith',
   image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/2/1440/540/75/dam/disney-world/admission/WDW_SWGE_1440x540.png?1605208793974',
@@ -25,6 +26,7 @@ const goalDetails = [
 },
 
 {
+  id: 'second',
   title: 'Rainy Day',
   creator: 'Jack Smith',
   image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fhhsmedia.com%2F30175%2Fopinion%2Frain-is-underrated%2F&psig=AOvVaw2VXcnktysVAfoLxEUnKd57&ust=1610176845441000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC4p6nmi-4CFQAAAAAdAAAAABAI',
@@ -114,10 +116,14 @@ function PageGroups() {
         <Container>
           <Row>
             <Col sm={4}>
-              <GroupBox/>
+              <GroupBox 
+              goal = {goalDetails[0]}>
+              </GroupBox>
             </Col>
             <Col sm={4}>
-              <GroupBox/>
+            <GroupBox 
+              goal = {goalDetails[1]}>
+              </GroupBox>
             </Col>
             <Col sm={4}>
               <GroupBox/>
