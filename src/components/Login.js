@@ -2,6 +2,8 @@ import React from "react"
 import fire from "../config/fire"
 import "./Login.css"
 import pigImage from "../assets/logo-pig.png"
+import {Link} from 'react-router-dom';
+
 
 class Login extends React.Component {
 
@@ -41,7 +43,14 @@ class Login extends React.Component {
                             <input class="login-input" id="password" placeholder="Password" type="text" />
                         </div>
                         <button class="login-button" onClick={this.login}>Login</button>
-                        <p class="sign-up"> Don't have an account? <button class="signup-link" onClick={this.signUp}>Sign up here</button> </p>
+                        {/* <p class="sign-up"> Don't have an account? <button class="signup-link" onClick={this.signUp}>Sign up here</button> </p> */}
+                        <p class="sign-up"> Don't have an account? 
+                            <Link to="/signup">
+                                <button class = 'signup-link' type="button">
+                                Sign up here
+                                </button>
+                            </Link> 
+                        </p>
                         </div>
                 </div>
             </div>
