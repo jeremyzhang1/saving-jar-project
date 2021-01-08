@@ -17,7 +17,7 @@ const ProgressBar = (props) => {
   const fillerStyles = {
     height: '100%',
     width: `${completed}%`,
-    backgroundColor: bgcolor,
+    backgroundColor: "#3A693F",
     borderRadius: 'inherit',
     textAlign: 'right'
     

@@ -68,8 +68,38 @@ const whiteBack = {
 
 const heading = {
   fontSize: 70,
+  marginTop: 70
 }
 
+const goalTitle = {
+  display: "inline",
+  textAlign: "left",
+  margin: "3%",
+  
+}
+
+const goalHeader = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  margin: "2%",
+}
+
+const goalBtnStyle = {
+  backgroundColor: "#3A693F",
+  color: "#FFFFFF",
+  fontSize: "25px",
+  height: "55px",
+  width: "100%",
+  borderRadius: "50px",
+  borderWidth: "0px",
+  marginRight: "40px",
+  boxShadow: "0px 4px 40px rgba(51, 66, 53, 0.40)"
+}
+
+const lineStyle = {
+  borderWidth: "2px",
+}
 // data to include: total amount, percentage, 
 
 function PageHome() {
@@ -92,12 +122,16 @@ function PageHome() {
       </div>
       
       <div class="goals" style={whiteBack}>
-        <h1> My Goals</h1>
-        <Link to="/groups">
-          <button type="button">
-              Join a Goal
-          </button>
-        </Link>
+        <div style={goalHeader}>
+          <h1 style={goalTitle}> My Goals</h1>
+          <Link to="/groups">
+            <button type="button" style={goalBtnStyle}>
+                Join a Goal
+            </button>
+          </Link>
+          
+        </div>
+        <hr style={lineStyle}></hr>
         {userData.map((item, index) => (
           <DashboardPig key ={index}  
           bgcolor = {item.bgcolor} 

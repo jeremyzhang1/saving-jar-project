@@ -10,9 +10,14 @@ import PageLogin from '../pages/PageLogin';
 import PageHome from '../pages/PageHome';
 import PageGroups from '../pages/PageGroups';
 import PageGoal from '../pages/PageGoal';
-import "./Navbar.css"
+import "./Navbar.css";
+import fire from "../config/fire"
 
 class BootstrapNavbar extends React.Component{
+
+    logout(){
+        fire.auth().signOut();
+    }
 
     render(){
         return(
@@ -33,7 +38,7 @@ class BootstrapNavbar extends React.Component{
                         <Route exact path="/home" component={PageHome} />
                         <Route exact path="/groups" component={PageGroups} />
                         <Route exact path="/goal" component={PageGoal} />
-                        <Route component={() => <Redirect to="/home" />} />
+                        <Route component={() => this.logout} />
                     </Switch>
                 </Router>
             </div>
