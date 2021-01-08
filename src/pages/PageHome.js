@@ -34,25 +34,17 @@ import { Helmet } from 'react-helmet';
 //     totalUncat: 30,
 // }
 
-const largeButtonStyle = {
-    backgroundColor: "#3A693F",
-    color: "#ffffff",
-    fontSize: 16,
-    height: 45,
-    width: 300,
-    borderRadius: "20px",
-    marginBottom: "10px"
-}
 
 const smallButtonStyle = {
     backgroundColor: "#3A693F",
     color: "#ffffff",
-    fontSize: 14,
-    height: 35,
-    width: "175px",
+    fontSize: 20,
+    height: 40,
+    width: "30%",
     borderRadius: "20px",
-    margin: "10px",
-    boxShadow: "0px 4px 40px rgba(51, 66, 53, 0.40)"
+    margin: "20px",
+    boxShadow: "0px 4px 40px rgba(51, 66, 53, 0.40)",
+    paddingBttom: "20px"
 }
 
 const whiteBack = {
@@ -100,6 +92,11 @@ const goalBtnStyle = {
 
 const lineStyle = {
   borderWidth: "2px",
+}
+
+const savingStyle = {
+  fontSize: 20,
+  color: "#3A693F",
 }
 // data to include: total amount, percentage, 
 
@@ -199,10 +196,10 @@ class PageHome extends Component {
                     <div>
                         <h2 style={goalTitle}>Overview</h2>
                         <hr style={lineStyle}></hr>
-                        <p> Total Savings: ${this.state.totalSaved}</p>
-                        <p> Available Funds: ${this.state.totalUncat}</p>
-                        <button style={smallButtonStyle} class="btn"> Move Money to Goal</button>
-                        <button style={smallButtonStyle} class="btn"> Upload Money</button>
+                        <p style={savingStyle}> Total Savings: ${this.state.totalSaved}</p>
+                        <p style={savingStyle}> Available Funds: ${this.state.totalUncat}</p>
+                        <button class="small-btn"> Add to Goal </button>
+                        <button class="small-btn"> Upload Money</button>
                     </div>
 
                 </div>

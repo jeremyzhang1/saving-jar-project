@@ -109,8 +109,6 @@ class PageGoal extends Component {
                   <p class = "descr"> <b>Goal Description:</b> {this.state.description}</p>
                 </div>
 
-        <button class = "uploadbut" onChange={get_json_info(group_name)} > Add Money to My Goal</button>
-        <GoalPig others = {users} thisUser = {userSample}/>
                 <div class = "boxStyle">
                   <h2>My Progress:</h2>
                   <GoalPig others = {users} thisUser = {userSample}/>

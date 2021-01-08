@@ -1,6 +1,6 @@
 import React from "react"
 import fire from "../config/fire"
-import "./Login.css"
+import "./Signup.css"
 import pigImage from "../assets/logo-pig.png"
 import {Link} from 'react-router-dom'
 
@@ -25,7 +25,10 @@ class Signup extends React.Component {
             <div>
                 <div class="split left">
                     <div class="inner-left">
-                        <img class="centered" src={pigImage}></img>
+                        <div class="centered">
+                            <img src={pigImage}></img>
+                            <h2> Start Saving Smarter </h2>
+                        </div>
                     </div>
                 </div>
                 <div class="split right">
