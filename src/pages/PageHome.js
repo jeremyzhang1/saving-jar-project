@@ -1,114 +1,216 @@
-import React from "react";
+import React, { Component } from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../components/PageHome.css';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 
-const userData = [
-  { group: "disney", 
-    bgcolor: "#6a1b9a", 
-    total: 100, 
-    current: 60, 
-    completed: 60,
-    startdate:'', 
-    enddate:'',
-  }, 
-  { 
-    group: "monthly payments",
-    bgcolor: "#17641A", 
-    total: 200, 
-    current: 10, 
-    completed: 5,
-    startdate:'', 
-    enddate:'',
-  }
-]
+// const userData = [
+//     {
+//         group: "disney",
+//         bgcolor: "#6a1b9a",
+//         total: 100,
+//         current: 60,
+//         completed: 60,
+//         startdate: '',
+//         enddate: '',
+//     },
+//     {
+//         group: "monthly payments",
+//         bgcolor: "#17641A",
+//         total: 200,
+//         current: 10,
+//         completed: 5,
+//         startdate: '',
+//         enddate: '',
+//     }
+// ]
 
-const userInfo = {
-  id: '',
-  groups: userData, 
-  totalInAccount: 100, 
-  totalSaved: 70,
-  totalUncat: 30,
-}
+// const userInfo = {
+//     id: '',
+//     groups: userData,
+//     totalInAccount: 100,
+//     totalSaved: 70,
+//     totalUncat: 30,
+// }
 
 const largeButtonStyle = {
-  backgroundColor: "#3A693F",
-  color: "#ffffff",
-  fontSize: 16,
-  height: 45,
-  width: 300,
-  borderRadius: "20px",
-  marginBottom: "10px"
+    backgroundColor: "#3A693F",
+    color: "#ffffff",
+    fontSize: 16,
+    height: 45,
+    width: 300,
+    borderRadius: "20px",
+    marginBottom: "10px"
 }
 
 const smallButtonStyle = {
-  backgroundColor: "#3A693F",
-  color: "#ffffff",
-  fontSize: 14,
-  height: 35,
-  width: 150,
-  borderRadius: "10px",
-  margin: "5px"
+    backgroundColor: "#3A693F",
+    color: "#ffffff",
+    fontSize: 14,
+    height: 35,
+    width: 150,
+    borderRadius: "10px",
+    margin: "5px"
 }
 
 const whiteBack = {
-  backgroundColor: "white",
-  maxWidth: "1200px",
-  justifyContent:"center",
-  alignItems: "center",
+    backgroundColor: "white",
+    maxWidth: "1200px",
+    justifyContent: "center",
+    alignItems: "center",
 }
 
 const heading = {
-  fontSize: 80,
-  
-
+    fontSize: 80
 }
 
 // data to include: total amount, percentage, 
 
-function PageHome() {
-  return (
-    <div className = "pageHome">
-      <Helmet>
-          <style>{'body { background-color:  #CBE2C5; }'}</style>
-      </Helmet>
+class PageHome extends Component {
+    constructor() {
+        super()
+        this.state = {
+            totalInAccount: 0,
+            totalSaved: 0,
+            totalUncat: 0,
+            userData1: [
+                {
+                    group: "",
+                    bgcolor: "",
+                    total: 0,
+                    current: 0,
+                    completed: 0,
+                    startdate: "",
+                    enddate: "",
+                }
+            ],
+            userData2: [
+                {
+                    group: "",
+                    bgcolor: "",
+                    total: 0,
+                    current: 0,
+                    completed: 0,
+                    startdate: "",
+                    enddate: "",
+                }
+            ],
+            userData3: [
+                {
+                    group: "",
+                    bgcolor: "",
+                    total: 0,
+                    current: 0,
+                    completed: 0,
+                    startdate: "",
+                    enddate: "",
+                }
+            ]
+        }
+    }
 
-      <h1 style = {heading}>My Dashboard</h1>
-      <div class = "rectangle" style = {whiteBack}> 
-      <div style = {{margin: "50px"}}>
-        <h2>Overview</h2>
-          <p> Total Savings: ${userInfo.totalSaved}</p> 
-          <p> uncategoried money: ${userInfo.totalUncat}</p>
-          <button style = {smallButtonStyle} class ="green"> Move Money to Goal</button>
-          <button style = {smallButtonStyle} class ="green"> Upload Money</button>
-        </div>
-        
-      </div>
-      
-      <div>
-        <h1> My Goals</h1>
-        <Link to="/groups">
-          <button type="button">
-              Join a Goal
-          </button>
-        </Link>
-        {userData.map((item, index) => (
-          <DashboardPig key ={index}  
-          bgcolor = {item.bgcolor} 
-          current = {item.current}
-          total = {item.total} 
-          completed = {item.completed}>
-          </DashboardPig>        
-        ))}
-      </div>
-        
-         
-    </div>
+    componentDidMount() {
+        fetch("https://saving-jar-project-default-rtdb.firebaseio.com/users/1231123/currentGroups.json")
+            .then(response => response.json())
+            .then(response => {
 
-    
-  );
+                this.setState({
+                    userData1: {
+                        group: response.disney.name,
+                        bgcolor: response.disney.color,
+                        total: response.disney.total,
+                        current: response.disney.current,
+                        completed: response.disney.completed,
+                        startdate: response.disney.startdate,
+                        enddate: response.disney.enddate
+                    }
+                })
+
+                this.setState({
+                    userData2: {
+                        group: response.monthlyPayments.name,
+                        bgcolor: response.monthlyPayments.color,
+                        total: response.monthlyPayments.total,
+                        current: response.monthlyPayments.current,
+                        completed: response.monthlyPayments.completed,
+                        startdate: response.monthlyPayments.startdate,
+                        enddate: response.monthlyPayments.enddate
+                    }
+                })
+            })
+            .catch(console.log)
+
+        fetch("https://groups-7995f-default-rtdb.firebaseio.com/users/1231123/account.json")
+            .then(response => response.json())
+            .then(response => {
+                this.setState({ totalInAccount: response.totalInAccount })
+                this.setState({ totalSaved: response.totalSaved })
+                this.setState({ totalUncat: response.totalUncat })
+            })
+            .catch(console.log)
+    }
+
+    render() {
+        return (
+            <div className="pageHome">
+                <Helmet>
+                    <style>{'body { background-color:  #CBE2C5; }'}</style>
+                </Helmet>
+
+                <h1 style={heading}>My Dashboard</h1>
+                <div class="rectangle" style={whiteBack}>
+                    <div style={{ margin: "50px" }}>
+                        <h2>Overview</h2>
+                        <p> Total Savings: ${this.state.totalSaved}</p>
+                        <p> uncategoried money: ${this.state.totalUncat}</p>
+                        <button style={smallButtonStyle} class="green"> Move Money to Goal</button>
+                        <button style={smallButtonStyle} class="green"> Upload Money</button>
+                    </div>
+
+                </div>
+
+                <div>
+                    <h1> My Goals</h1>
+                    <Link to="/groups">
+                        <button type="button">
+                            Join a Goal
+                  </button>
+                    </Link>
+                    {/*userData.map((item, index) => (
+                  <DashboardPig key ={index}  
+                  bgcolor = {item.bgcolor} 
+                  current = {item.current}
+                  total = {item.total} 
+                  completed = {item.completed}>
+                  </DashboardPig>        
+                ))*/}
+                    <DashboardPig
+                        bgcolor={this.state.userData1.bgcolor}
+                        current={this.state.userData1.current}
+                        total={this.state.userData1.total}
+                        completed={this.state.userData1.completed}>
+                    </DashboardPig>
+                    <DashboardPig
+                        bgcolor={this.state.userData2.bgcolor}
+                        current={this.state.userData2.current}
+                        total={this.state.userData2.total}
+                        completed={this.state.userData2.completed}>
+                    </DashboardPig>
+                    <DashboardPig
+                        bgcolor={this.state.userData3.bgcolor}
+                        current={this.state.userData3.current}
+                        total={this.state.userData3.total}
+                        completed={this.state.userData3.completed}>
+                    </DashboardPig>
+                </div>
+
+
+            </div>
+
+
+        );
+    }
 }
 
 export default PageHome;
