@@ -24,7 +24,7 @@ const userSample = {
   enddate:'', 
 }
 
-var db = fire.database();
+//var db = fire.database();
 
 var goalDetails = {
   title: 'Trip to Disneyworld!',
@@ -82,157 +82,157 @@ class PageGoal extends Component {
 
     
 
-// making goals / groups
-makeGoal(creator, description, group, image, imageAlt, title) {
-  var path = "groups/" + group + "/groupDetails/";
-  var updates = {};
+// // making goals / groups
+// makeGoal(creator, description, group, image, imageAlt, title) {
+//   var path = "groups/" + group + "/groupDetails/";
+//   var updates = {};
 
-  updates[path + "/createDate"] = getCurrentDate();
-  updates[path + "/creator"] = creator;
-  updates[path + "/description"] = description;
-  updates[path + "/image"] = image;
-  updates[path + "/imageAlt"] = imageAlt;
-  updates[path + "/title"] = title;
-  updates[path + "/userscompleted"] = 0;
-  updates[path + "/usersworking"] = 0;
+//   updates[path + "/createDate"] = getCurrentDate();
+//   updates[path + "/creator"] = creator;
+//   updates[path + "/description"] = description;
+//   updates[path + "/image"] = image;
+//   updates[path + "/imageAlt"] = imageAlt;
+//   updates[path + "/title"] = title;
+//   updates[path + "/userscompleted"] = 0;
+//   updates[path + "/usersworking"] = 0;
 
-  db.ref().update(updates);
-}
+//   db.ref().update(updates);
+// }
 
-// upddate group info
-updateGroupInfo(id, group) {
-  // removes user from group
-  var g_users_path = "groups/" + group + "/users/" + id;
-  db.ref(g_users_path).remove();
+// // upddate group info
+// updateGroupInfo(id, group) {
+//   // removes user from group
+//   var g_users_path = "groups/" + group + "/users/" + id;
+//   db.ref(g_users_path).remove();
 
-  // updates users completed and working in groups
-  var g_groups_path = "groups/" + group;
-  return db
-    .ref(g_groups_path)
-    .once("value")
-    .then((snapshot) => {
-      var userscompleted = snapshot.val().groupDetails.userscompleted;
-      var usersworking = snapshot.val().groupDetails.usersworking;
+//   // updates users completed and working in groups
+//   var g_groups_path = "groups/" + group;
+//   return db
+//     .ref(g_groups_path)
+//     .once("value")
+//     .then((snapshot) => {
+//       var userscompleted = snapshot.val().groupDetails.userscompleted;
+//       var usersworking = snapshot.val().groupDetails.usersworking;
 
-      var updates = {};
-      updates[g_groups_path + "/groupDetails/userscompleted"] =
-        userscompleted - 1;
-      updates[g_groups_path + "/groupDetails/usersworking"] = usersworking + 1;
-      // adding to users list
-      db.ref().update(updates);
-    });
-}
+//       var updates = {};
+//       updates[g_groups_path + "/groupDetails/userscompleted"] =
+//         userscompleted - 1;
+//       updates[g_groups_path + "/groupDetails/usersworking"] = usersworking + 1;
+//       // adding to users list
+//       db.ref().update(updates);
+//     });
+// }
 
-// groups side
-addMoneyGroups(id, group, addAmnt) {
-  var path = "groups/" + group + "/users/" + id;
-  return db
-    .ref(path)
-    .once("value")
-    .then((snapshot) => {
-      // users side
-      var groupCurrent = snapshot.val().current;
-      var updates = {};
-      updates[path + "/current"] = groupCurrent + addAmnt;
-      db.ref().update(updates);
-    });
-}
+// // groups side
+// addMoneyGroups(id, group, addAmnt) {
+//   var path = "groups/" + group + "/users/" + id;
+//   return db
+//     .ref(path)
+//     .once("value")
+//     .then((snapshot) => {
+//       // users side
+//       var groupCurrent = snapshot.val().current;
+//       var updates = {};
+//       updates[path + "/current"] = groupCurrent + addAmnt;
+//       db.ref().update(updates);
+//     });
+// }
 
-// users side
-addMoneyUsers(id, group, addAmnt) {
-  var path = "users/" + id;
-  return db
-    .ref(path)
-    .once("value")
-    .then((snapshot) => {
-      // users side
-      var accountTotal = snapshot.val().account.totalInAccount;
-      var accountCurrent = snapshot.val().account.totalSaved;
-      var updates = {};
+// // users side
+// addMoneyUsers(id, group, addAmnt) {
+//   var path = "users/" + id;
+//   return db
+//     .ref(path)
+//     .once("value")
+//     .then((snapshot) => {
+//       // users side
+//       var accountTotal = snapshot.val().account.totalInAccount;
+//       var accountCurrent = snapshot.val().account.totalSaved;
+//       var updates = {};
 
-      updates[path + "/account/totalSaved"] = accountCurrent + addAmnt;
-      updates[path + "/account/totalUncat"] = accountTotal - accountCurrent;
+//       updates[path + "/account/totalSaved"] = accountCurrent + addAmnt;
+//       updates[path + "/account/totalUncat"] = accountTotal - accountCurrent;
 
-      addMoneyUsersGC(id, group, addAmnt);
+//       addMoneyUsersGC(id, group, addAmnt);
 
-      db.ref().update(updates);
-    });
-}
+//       db.ref().update(updates);
+//     });
+// }
 
-// users side
-addMoneyUsersGC(id, group, addAmnt) {
-  var path = "users/" + id + "/currentGroups/" + group;
-  return db
-    .ref(path)
-    .once("value")
-    .then((snapshot) => {
-      var userGroupCurrent = snapshot.val().current;
+// // users side
+// addMoneyUsersGC(id, group, addAmnt) {
+//   var path = "users/" + id + "/currentGroups/" + group;
+//   return db
+//     .ref(path)
+//     .once("value")
+//     .then((snapshot) => {
+//       var userGroupCurrent = snapshot.val().current;
 
-      var updates = {};
-      updates[path + "/current"] = userGroupCurrent + addAmnt;
-      db.ref().update(updates);
-    });
-}
+//       var updates = {};
+//       updates[path + "/current"] = userGroupCurrent + addAmnt;
+//       db.ref().update(updates);
+//     });
+// }
 
-//add money to your goal
-addMoney(id, group, addAmnt) {
-  addMoneyGroups(id, group, addAmnt);
-  addMoneyUsers(id, group, addAmnt);
-}
+// //add money to your goal
+// addMoney(id, group, addAmnt) {
+//   addMoneyGroups(id, group, addAmnt);
+//   addMoneyUsers(id, group, addAmnt);
+// }
 
-// gets the current date
-getCurrentDate() {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-  var yyyy = today.getFullYear();
+// // gets the current date
+// getCurrentDate() {
+//   var today = new Date();
+//   var dd = String(today.getDate()).padStart(2, "0");
+//   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+//   var yyyy = today.getFullYear();
 
-  var today = (today = mm + "/" + dd + "/" + yyyy);
-  return today;
-}
+//   var today = (today = mm + "/" + dd + "/" + yyyy);
+//   return today;
+// }
 
-// add to group groups side
-addToGroupG(current, id, enddate, group, total) {
-  var path = "groups/" + group;
-  return db
-    .ref(path)
-    .once("value")
-    .then((snapshot) => {
-      var updates = {};
+// // add to group groups side
+// addToGroupG(current, id, enddate, group, total) {
+//   var path = "groups/" + group;
+//   return db
+//     .ref(path)
+//     .once("value")
+//     .then((snapshot) => {
+//       var updates = {};
 
-      // fetch for this
-      var usersworking = snapshot.val().groupDetails.usersworking;
-      //var usersCompleted = snapshot.val().groupDetails.usersCompleted;
+//       // fetch for this
+//       var usersworking = snapshot.val().groupDetails.usersworking;
+//       //var usersCompleted = snapshot.val().groupDetails.usersCompleted;
 
-      updates[path + "/groupDetails/usersworking"] = usersworking + 1;
+//       updates[path + "/groupDetails/usersworking"] = usersworking + 1;
 
-      updates[path + "/users/" + id + "/total"] = total;
-      updates[path + "/users/" + id + "/current"] = current;
-      updates[path + "/users/" + id + "/startdate"] = getCurrentDate();
-      updates[path + "/users/" + id + "/enddate"] = enddate;
+//       updates[path + "/users/" + id + "/total"] = total;
+//       updates[path + "/users/" + id + "/current"] = current;
+//       updates[path + "/users/" + id + "/startdate"] = getCurrentDate();
+//       updates[path + "/users/" + id + "/enddate"] = enddate;
 
-      //db.ref().update(updates);
-    });
-}
+//       //db.ref().update(updates);
+//     });
+// }
 
-// adds user to group
-addToGroupU(current, id, enddate, group, total, color) {
-  return db
-    .ref()
-    .once("value")
-    .then((snapshot) => {
-      // adding to users section
-      var updates2 = {};
-      var u_users_path = "users/" + id + "/currentGroups/" + group;
-      updates2[u_users_path + "/color"] = color;
-      updates2[u_users_path + "/total"] = total;
-      updates2[u_users_path + "/current"] = current;
-      updates2[u_users_path + "/startdate"] = getCurrentDate();
-      updates2[u_users_path + "/enddate"] = enddate;
+// // adds user to group
+// addToGroupU(current, id, enddate, group, total, color) {
+//   return db
+//     .ref()
+//     .once("value")
+//     .then((snapshot) => {
+//       // adding to users section
+//       var updates2 = {};
+//       var u_users_path = "users/" + id + "/currentGroups/" + group;
+//       updates2[u_users_path + "/color"] = color;
+//       updates2[u_users_path + "/total"] = total;
+//       updates2[u_users_path + "/current"] = current;
+//       updates2[u_users_path + "/startdate"] = getCurrentDate();
+//       updates2[u_users_path + "/enddate"] = enddate;
 
-      db.ref().update(updates2);
-    });
-}
+//       db.ref().update(updates2);
+//     });
+// }
 
 // removes user from group
 // function removeUserFromGroup(id, group) {
@@ -363,7 +363,7 @@ addToGroupU(current, id, enddate, group, total, color) {
                   <p class = "descr"> <b>Goal Description:</b> {this.state.description}</p>
                 </div>
 
-        <button class = "uploadbut" onChange={get_json_info(group_name)} > Add Money to My Goal</button>
+        <button class = "uploadbut" > Add Money to My Goal</button>
         <GoalPig others = {users} thisUser = {userSample}/>
                 <div class = "boxStyle">
                   <h2>My Progress:</h2>

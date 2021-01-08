@@ -9,6 +9,7 @@
     "algebra.js": "^0.2.6",
     "bootstrap": "^4.5.3",
     "firebase": "^8.2.2",
+    "firebase-tools": "^9.1.2",
     "helmet": "^4.3.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
