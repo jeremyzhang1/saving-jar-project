@@ -8,7 +8,8 @@ setConfiguration({ gutterWidth: 30 });
 
 function PageGroups() {
   const groupStyle={
-    backgroundColor: "#c8e1ef"
+    backgroundColor: "#c8e1ef",
+    padding: "50px"
   }
   const createButtonStyle = {
     backgroundColor: "#0e71a9",

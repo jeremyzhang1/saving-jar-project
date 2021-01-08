@@ -1,7 +1,10 @@
 import React from "react"
 import fire from "../config/fire"
+import "./Login.css"
+import pigImage from "../assets/logo-pig.png"
 
 class Login extends React.Component {
+
 
     login(){
         var username = document.getElementById("email").value
@@ -31,18 +34,29 @@ class Login extends React.Component {
 
     render(){
         return (
-            <div style={{ textAlign: 'center' }}>
-                <div>
-                    <div>Email</div>
-                    <input id="email" placeholder="Enter email..." type="text" />
+            <div>
+                <div class="split left">
+                    <div class="inner-left">
+                        <img class="centered" src={pigImage}></img>
+                    </div>
                 </div>
-                <div>
-                    <div>Password</div>
-                    <input id="password" placeholder="Enter Password..." type="text" />
+                <div class="split right">
+                    <div class="inner-right">
+                        <div class="login-form centered">
+                        <h1> Welcome Back! </h1>
+                        <div>
+                            <input class="login-input" id="email" placeholder="  Your Email" type="text" />
+                        </div>
+                        <div>
+                            <input class="login-input" id="password" placeholder="  Password" type="text" />
+                        </div>
+                        <button class="login-button" onClick={this.login}>Login</button>
+                        <p class="sign-up"> Don't have an account? <button class="signup-link" onClick={this.signUp}>Sign up here</button> </p>
+                        </div>
                 </div>
-                <button style={{margin: '10px'}} onClick={this.login}>Login</button>
-                <button style={{margin: '10px'}} onClick={this.signUp}>Sign Up</button>
             </div>
+            </div>
+           
         )
     }
 }
