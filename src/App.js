@@ -1,15 +1,10 @@
 import React from 'react'
 import './App.css';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import PageLogin from './pages/PageLogin';
-import PageHome from './pages/PageHome';
-import PageGroups from './pages/PageGroups';
-import PageGoal from './pages/PageGoal';
 import BootstrapNavbar from './components/NavBar.js';
 
 
 //import Navbar from 'react-bootstrap/Navbar';
-var Bootstrap = require('react-bootstrap')
+//var Bootstrap = require('react-bootstrap')
 
 /*const navbar = {
   backgroundColor: black,
