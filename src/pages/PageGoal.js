@@ -13,27 +13,27 @@ const users = [
 ]
 
 const userSample = {
-    group: "disney",
-    id: 2,
-    bgcolor: "#6a1b9a",
-    total: 100,
-    current: 60,
-    completed: 60,
-    startdate: '',
-    enddate: '',
+  group: "disney", 
+  id: 2, 
+  bgcolor: "#6a1b9a", 
+  total: 100, 
+  current: 60, 
+  completed: 60,
+  startdate:'', 
+  enddate:'', 
 }
 
-// const goalDetails = {
-//     title: 'Trip to Disneyworld!',
-//     creator: 'Carolyn',
-//     image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/2/1440/540/75/dam/disney-world/admission/WDW_SWGE_1440x540.png?1605208793974',
-//     imageAlt: 'disney!',
-//     createDate: '1/17/2020',
-//     description: 'This is a description of the group. We all want to go to disneyland! Therefore, we should all really try really hard to save for disneyland. And like, we should also really encourage each other to save to go to disneyland. yeah. and im going to keep going on about diensy land. Go disney! ',
-//     users: users,
-//     usersworking: users.length, //need to instead do completed
-//     userscompleted: 10,
-// }
+var goalDetails = {
+  title: 'Trip to Disneyworld!',
+  creator: 'Carolyn',
+  image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/2/1440/540/75/dam/disney-world/admission/WDW_SWGE_1440x540.png?1605208793974',
+  imageAlt: 'disney!',
+  createDate: '1/17/2020',
+  description: 'This is a description of the group. We all want to go to disneyland! Therefore, we should all really try really hard to save for disneyland. And like, we should also really encourage each other to save to go to disneyland. yeah. and im going to keep going on about diensy land. Go disney! ',
+  users: users, 
+  usersworking: users.length, //need to instead do completed
+  userscompleted: 10,
+} 
 
 const createButtonStyle = {
     backgroundColor: "#0e71a9",
@@ -100,8 +100,8 @@ class PageGoal extends Component {
                   <p class = "descr"> <b>Goal Description:</b> {this.state.description}</p>
                 </div>
 
-                <button class = "uploadbut" > Add Money to My Goal</button>
-                <GoalPig others = {users} thisUser = {userSample}/>
+        <button class = "uploadbut" onChange={get_json_info(group_name)} > Add Money to My Goal</button>
+        <GoalPig others = {users} thisUser = {userSample}/>
 
               </div>
             </div>
