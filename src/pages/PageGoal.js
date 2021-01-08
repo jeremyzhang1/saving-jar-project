@@ -69,6 +69,7 @@ class PageGoal extends Component {
                 this.setState({ image: response.disney.groupDetails.image })
                 this.setState({ imageAlt: response.disney.groupDetails.imageAlt })
                 this.setState({ createDate: response.disney.groupDetails.createDate })
+                this.setState({ description: response.disney.groupDetails.description })
                 this.setState({ usersworking: response.disney.groupDetails.usersworking })
                 this.setState({ userscompleted: response.disney.groupDetails.userscompleted })
                 //console.log(this.goalDetails.group_info.image)
