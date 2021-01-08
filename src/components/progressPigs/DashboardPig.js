@@ -28,7 +28,8 @@ const DashboardPig = (props) => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    margin: "2%",
+    margin: "1%",
+    fontSize: 50,
   }
   
   return (

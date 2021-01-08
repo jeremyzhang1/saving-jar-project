@@ -3,6 +3,14 @@ import GroupBox from '../components/GroupBox';
 import { setConfiguration, Container, Row, Col } from 'react-grid-system';
 import {Helmet} from 'react-helmet';
 
+const users = [
+  { id: 1, percentage: 20 },
+  { id: 2, percentage: 20 },
+  { id: 3, percentage: 20 },
+  { id: 4, percentage: 20 },
+  { id: 5, percentage: 20 },
+]
+
 const goalDetails = [
   {
   title: 'Trip to Disneyworld!',
