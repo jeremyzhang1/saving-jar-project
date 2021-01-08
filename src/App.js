@@ -58,13 +58,13 @@ function updateGroupInfo(id, group) {
     .ref(g_groups_path)
     .once("value")
     .then((snapshot) => {
-      var usersCompleted = snapshot.val().groupDetails.usersCompleted;
-      var usersWorking = snapshot.val().groupDetails.usersWorking;
+      var userscompleted = snapshot.val().groupDetails.userscompleted;
+      var usersworking = snapshot.val().groupDetails.usersworking;
 
       var updates = {};
-      updates[g_groups_path + "/groupDetails/usersCompleted"] =
-        usersCompleted - 1;
-      updates[g_groups_path + "/groupDetails/usersWorking"] = usersWorking + 1;
+      updates[g_groups_path + "/groupDetails/userscompleted"] =
+        userscompleted - 1;
+      updates[g_groups_path + "/groupDetails/usersworking"] = usersworking + 1;
       // adding to users list
       db.ref().update(updates);
     });
@@ -148,10 +148,10 @@ function addToGroupG(current, id, enddate, group, total) {
       var updates = {};
 
       // fetch for this
-      var usersWorking = snapshot.val().groupDetails.usersWorking;
+      var usersworking = snapshot.val().groupDetails.usersworking;
       //var usersCompleted = snapshot.val().groupDetails.usersCompleted;
 
-      updates[path + "/groupDetails/usersworking"] = usersWorking + 1;
+      updates[path + "/groupDetails/usersworking"] = usersworking + 1;
 
       updates[path + "/users/" + id + "/total"] = total;
       updates[path + "/users/" + id + "/current"] = current;
@@ -163,7 +163,7 @@ function addToGroupG(current, id, enddate, group, total) {
 }
 
 // adds user to group
-function addToGroupU(current, id, enddate, group, total) {
+function addToGroupU(current, id, enddate, group, total, color) {
   return db
     .ref()
     .once("value")
@@ -171,6 +171,7 @@ function addToGroupU(current, id, enddate, group, total) {
       // adding to users section
       var updates2 = {};
       var u_users_path = "users/" + id + "/currentGroups/" + group;
+      updates2[u_users_path + "/color"] = color;
       updates2[u_users_path + "/total"] = total;
       updates2[u_users_path + "/current"] = current;
       updates2[u_users_path + "/startdate"] = getCurrentDate();
@@ -178,11 +179,6 @@ function addToGroupU(current, id, enddate, group, total) {
 
       db.ref().update(updates2);
     });
-}
-
-function addToGroup(current, id, enddate, group, total) {
-  addToGroupG(current, id, enddate, group, total);
-  addToGroupU(current, id, enddate, group, total);
 }
 
 // removes user from group
