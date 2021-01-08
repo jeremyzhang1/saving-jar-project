@@ -46,11 +46,11 @@ class Login extends React.Component {
                         {/* <p class="sign-up"> Don't have an account? <button class="signup-link" onClick={this.signUp}>Sign up here</button> </p> */}
                         <p class="sign-up"> Don't have an account? 
                             <Link to="/signup">
-                            <button class = 'signup-link' type="button">
+                                <button class = 'signup-link' type="button">
                                 Sign up here
-                            </button>
-          </Link> </p>
-
+                                </button>
+                            </Link> 
+                        </p>
                         </div>
                 </div>
             </div>

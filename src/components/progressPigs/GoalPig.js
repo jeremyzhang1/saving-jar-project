@@ -4,6 +4,8 @@ import ProgressBar from "./ProgressBar.js";
 
 const GoalPig = (props) => {
     const { others, thisUser} = props;
+
+    
       return(
           <ProgressBar 
             bgcolor= {thisUser.bgcolor}

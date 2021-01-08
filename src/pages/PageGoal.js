@@ -57,10 +57,13 @@ function PageGoal() {
           <p class = "descr"> You and {users.length} other users currently working on this goal | {goalDetails.userscompleted} users have completed this goal</p>
           <p claas = "descr"> <b>Goal Description:</b> {goalDetails.description}</p>
         </div>
-
-        <button class = "uploadbut" > Add Money to My Goal</button>
-        <GoalPig others = {users} thisUser = {userSample} style={{marginBottom: "400px"}}/>
-
+          <button class = "uploadbut" > Add Money to My Goal</button>
+          <div class = "boxStyle">
+            <h2>My Progress:</h2>
+            <GoalPig others = {users} thisUser = {userSample}/>
+            <p>You have saved: </p>
+            <p>You still need to save: </p>
+          </div>
       </div>
     </div>
   );
