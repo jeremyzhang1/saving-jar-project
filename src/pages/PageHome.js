@@ -49,9 +49,10 @@ const smallButtonStyle = {
     color: "#ffffff",
     fontSize: 14,
     height: 35,
-    width: 150,
-    borderRadius: "10px",
-    margin: "5px"
+    width: "175px",
+    borderRadius: "20px",
+    margin: "10px",
+    boxShadow: "0px 4px 40px rgba(51, 66, 53, 0.40)"
 }
 
 const whiteBack = {
@@ -60,7 +61,7 @@ const whiteBack = {
   justifyContent:"center",
   alignItems: "center",
   textAlign: "center",
-  width: "70%",
+  width: "60%",
   margin: "auto",
   marginTop: "50px",
   padding: "30px",
@@ -68,15 +69,14 @@ const whiteBack = {
 }
 
 const heading = {
-  fontSize: 70,
+  fontSize: 60,
   marginTop: 70
 }
 
 const goalTitle = {
-  display: "inline",
   textAlign: "left",
-  margin: "3%",
-  
+  margin: "1%",
+  fontSize: 50,
 }
 
 const goalHeader = {
@@ -196,19 +196,20 @@ class PageHome extends Component {
 
                 <h1 style={heading}>My Dashboard</h1>
                 <div class="rectangle" style={whiteBack}>
-                    <div style={{ margin: "50px" }}>
-                        <h2 style={goalHeader}>Overview</h2>
+                    <div>
+                        <h2 style={goalTitle}>Overview</h2>
+                        <hr style={lineStyle}></hr>
                         <p> Total Savings: ${this.state.totalSaved}</p>
-                        <p> uncategoried money: ${this.state.totalUncat}</p>
-                        <button style={smallButtonStyle} class="button green"> Move Money to Goal</button>
-                        <button style={smallButtonStyle} class="button green"> Upload Money</button>
+                        <p> Available Funds: ${this.state.totalUncat}</p>
+                        <button style={smallButtonStyle} class="btn"> Move Money to Goal</button>
+                        <button style={smallButtonStyle} class="btn"> Upload Money</button>
                     </div>
 
                 </div>
 
                 <div style={whiteBack}>
                     <div style={goalHeader}>
-                      <h1> My Goals</h1>
+                      <h1 style={goalTitle}> My Goals</h1>
                       <Link to="/groups">
                           <button class="btn" type="button">
                               Join a Goal
