@@ -1,6 +1,7 @@
 import React from "react";
 import '../components/PageGoal.css';
 import {Helmet} from 'react-helmet';
+import GoalPig from '../components/progressPigs/GoalPig.js'
 
 
 const users = [
@@ -33,6 +34,21 @@ const goalDetails = {
   userscompleted: 10,
 }
 
+const createButtonStyle = {
+  backgroundColor: "#0e71a9",
+  color: "#ffffff",
+  fontSize: 16,
+  height: 40,
+  width: 300,
+  borderRadius: "20px",
+  marginBottom: "10px"
+}
+
+const imageBlur = {
+  filter: "blur(8px)",
+  //-webkit-filter: blur(8px),
+}
+
 function PageGoal() {
   return (
     <div>
@@ -51,7 +67,11 @@ function PageGoal() {
 
         <p> {goalDetails.description}</p>
 
-        <button> Add Money to My Goal</button>
+        <button style={createButtonStyle}> Add Money to My Goal</button>
+        <GoalPig others = {users} thisUser = {userSample}/>
+
+        
+
       </div>
     </div>
   );
