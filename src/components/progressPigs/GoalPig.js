@@ -1,16 +1,16 @@
 import React from "react";
-import DashboardPig from "./DashboardPig.js";
+import ProgressBar from "./ProgressBar.js";
 
 
 const GoalPig = (props) => {
     const { others, thisUser} = props;
       return(
-          <DashboardPig 
+          <ProgressBar 
             bgcolor= {thisUser.bgcolor}
             total = {thisUser.total}
             current = {thisUser.current}
             completed = {thisUser.completed}
-          ></DashboardPig>
+          ></ProgressBar>
       )
   
   }

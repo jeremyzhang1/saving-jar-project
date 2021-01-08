@@ -24,7 +24,7 @@ class PageLogin extends React.Component {
             if(user){
                 this.setState({ user })
             }else{
-                this.setState({ user: null })
+                this.setState({ user: null }) 
             }
         })
     }
