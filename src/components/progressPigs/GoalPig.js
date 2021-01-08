@@ -1,5 +1,5 @@
 import React from "react";
-import ProgressBar from "./ProgressBar.js";
+import GoalBar from "./GoalBar.js";
 import MiniPig from "./MiniPig.js";
 
 const GoalPig = (props) => {
@@ -11,14 +11,14 @@ const GoalPig = (props) => {
         pigs.push(<MiniPig percentage={percentage} ></MiniPig>);
       }
       return(
-          <ProgressBar 
+          <GoalBar 
             bgcolor= {thisUser.bgcolor}
             total = {thisUser.total}
             current = {thisUser.current}
             completed = {thisUser.completed}
           >
             {pigs}
-          </ProgressBar>
+          </GoalBar>
       )
   
   }
