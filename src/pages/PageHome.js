@@ -1,6 +1,5 @@
 import React from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
-import { Route, Switch, Redirect, Link} from 'react-router-dom';
 import '../components/PageHome.css';
 import {Helmet} from 'react-helmet';
 import { Link} from 'react-router-dom';
