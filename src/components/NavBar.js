@@ -12,17 +12,16 @@ import PageGroups from '../pages/PageGroups';
 import PageGoal from '../pages/PageGoal';
 import "./Navbar.css"
 
-
 class BootstrapNavbar extends React.Component{
 
     render(){
         return(
             <div>
                 <Router>
-                    <Navbar bg="dark" variant="pills" expand="lg" sticky="top">
+                    <Navbar bg="dark" variant="pills" expand="lg" sticky="top" style={{position: "absolute", width: "100%"}}>
                         <Nav className='navigation' class="navbar navbar-expand-md navbar-fixed-top">
 
-                            <Nav.Link href="/">Logout</Nav.Link> 
+                            <Nav.Link href="/login">Logout</Nav.Link> 
                             <Nav.Link id="ghome" href="/home"  >Home</Nav.Link>
                             <Nav.Link id="bgroup" href="/groups" >Find a Group</Nav.Link>
                             <Nav.Link href="/goal">Goal Page</Nav.Link>

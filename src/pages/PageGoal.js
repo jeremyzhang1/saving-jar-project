@@ -35,58 +35,35 @@ const goalDetails = {
   userscompleted: 10,
 }
 
-const createButtonStyle = {
-  backgroundColor: "#0e71a9",
-  color: "#ffffff",
-  fontSize: 16,
-  height: 40,
-  width: 300,
-  borderRadius: "20px",
-  marginBottom: "10px"
-}
+function PageGoal() {
+  return (
+    <div class = "larger">
+      {/* <Helmet>
+          <style>{'body { background-color: #C8E1EF; }'}</style>
+      </Helmet> */}
+      <div class = "larger">
+        <div class = "cover">
+          <img 
+            class= "coverphoto"
+            src = {goalDetails.image}
+            alt = {goalDetails.imageAlt}
+          />
+          <h1 class = "title">{goalDetails.title}</h1>
+        </div>
 
-class PageGoal extends Component {
-    constructor(){
-        super()
-        this.state = {
-            goalDetails: []
-        }
-    }
+        <div class = "goaldetails">
+          <p class = "smalldet"> <b>Created By:</b> {goalDetails.creator}</p>
+          <p class = "smalldet"> <b>Date Created:</b> {goalDetails.createDate}</p>
+          <p class = "descr"> You and {users.length} other users currently working on this goal | {goalDetails.userscompleted} users have completed this goal</p>
+          <p claas = "descr"> <b>Goal Description:</b> {goalDetails.description}</p>
+        </div>
 
-    componentDidMount() {
+        <button class = "uploadbut" > Add Money to My Goal</button>
+        <GoalPig others = {users} thisUser = {userSample} style={{marginBottom: "400px"}}/>
 
-    }
-
-    render(){
-        return (
-            <div class = "larger">
-              {/* <Helmet>
-                  <style>{'body { background-color: #C8E1EF; }'}</style>
-              </Helmet> */}
-              <div class = "larger">
-                <div class = "cover">
-                  <img 
-                    class= "coverphoto"
-                    src = {goalDetails.image}
-                    alt = {goalDetails.imageAlt}
-                  />
-                  <h1 class = "title">{goalDetails.title}</h1>
-                </div>
-        
-                <div class = "goaldetails">
-                  <p class = "smalldet"> <b>Created By:</b> {goalDetails.creator}</p>
-                  <p class = "smalldet"> <b>Date Created:</b> {goalDetails.createDate}</p>
-                  <p class = "descr"> You and {users.length} other users currently working on this goal | {goalDetails.userscompleted} users have completed this goal</p>
-                  <p claas = "descr"> <b>Goal Description:</b> {goalDetails.description}</p>
-                </div>
-        
-                <button class = "uploadbut" > Add Money to My Goal</button>
-                <GoalPig others = {users} thisUser = {userSample}/>
-        
-              </div>
-            </div>
-          );
-    }
+      </div>
+    </div>
+  );
 }
 
 export default PageGoal;
