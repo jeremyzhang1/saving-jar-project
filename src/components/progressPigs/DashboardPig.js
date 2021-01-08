@@ -31,28 +31,16 @@ const DashboardPig = (props) => {
     margin: "2%",
   }
   
-  const manageStyle = {
-    backgroundColor: "#3A693F",
-    color: "#FFFFFF",
-    fontSize: "25px",
-    height: "55px",
-    width: "100%",
-    borderRadius: "50px",
-    borderWidth: "0px",
-    marginRight: "40px",
-    boxShadow: "0px 4px 40px rgba(51, 66, 53, 0.40)"
-  }
-
   return (
     <div style={groupStyle}>
       <div style={headerStyle}>
         <h1 style={titleStyle}> Disneyland </h1>
         <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
+          <button class="dropbtn">Manage</button>
           <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#">Add Money</a>
+            <a href="#">Edit Goal</a>
+            <a href="#">See Group</a>
           </div>
         </div>
       </div>
