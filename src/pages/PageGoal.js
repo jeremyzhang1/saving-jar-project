@@ -20,10 +20,10 @@ const userSample = {
   current: 60, 
   completed: 60,
   startdate:'', 
-  enddate:'',
+  enddate:'', 
 }
 
-const goalDetails = {
+var goalDetails = {
   title: 'Trip to Disneyworld!',
   creator: 'Carolyn',
   image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/2/1440/540/75/dam/disney-world/admission/WDW_SWGE_1440x540.png?1605208793974',
@@ -33,7 +33,7 @@ const goalDetails = {
   users: users, 
   usersworking: users.length, //need to instead do completed
   userscompleted: 10,
-}
+} 
 
 const createButtonStyle = {
   backgroundColor: "#0e71a9",
@@ -44,7 +44,6 @@ const createButtonStyle = {
   borderRadius: "20px",
   marginBottom: "10px"
 }
-
 
 
 function PageGoal() {
@@ -70,7 +69,7 @@ function PageGoal() {
           <p claas = "descr"> <b>Goal Description:</b> {goalDetails.description}</p>
         </div>
 
-        <button class = "uploadbut" > Add Money to My Goal</button>
+        <button class = "uploadbut" onChange={get_json_info(group_name)} > Add Money to My Goal</button>
         <GoalPig others = {users} thisUser = {userSample}/>
 
       </div>

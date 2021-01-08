@@ -27,7 +27,7 @@ const userData = [
 
 const userInfo = {
   id: '',
-  groups: userData, 
+  currentGroups: userData, 
   totalInAccount: 100, 
   totalSaved: 70,
   totalUncat: 30,
