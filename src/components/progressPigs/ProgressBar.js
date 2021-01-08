@@ -6,18 +6,18 @@ const ProgressBar = (props) => {
   const {bgcolor, completed} = props;
   const containerStyles = {
     height: 20,
-    width: '100%',
+    width: '80%',
     backgroundColor: "#e0e0de",
     borderRadius: 50,
     marginLeft: 50,
     marginRight: 50,
-    marginTop: '-10%',
-    marginBottom: '10%'
+    marginTop: '-7%',
+    marginBottom: '10px',
   }
   const fillerStyles = {
     height: '100%',
     width: `${completed}%`,
-    backgroundColor: bgcolor,
+    backgroundColor: "#3A693F",
     borderRadius: 'inherit',
     textAlign: 'right'
     
@@ -31,15 +31,16 @@ const ProgressBar = (props) => {
     width: '100%'
   }
   const pigStyles = {
-    width: '30%',
+    width: '40%',
     position: 'relative',
     textAlign: 'center',
     color: 'white',
-    left: `${completed-10}%`
+    left: `${completed-30}%`
   }
   const compStyles = {
     position: 'absolute',
     textAlign: 'center',
+    marginLeft: 50,
     top: '37%',
     left: '33%'
     
@@ -47,15 +48,18 @@ const ProgressBar = (props) => {
   const savedStyles = {
     position: 'absolute',
     textAlign: 'center',
+    marginLeft: 50,
     top: '47%',
     left: '33%'
   }
   const totalStyles = {
     position: 'absolute',
     textAlign: 'center',
+    marginLeft: 50,
     top: '57%',
     left: '33%'
   }
+
   return (
     <div>
       <div class="container pig-stats" style={pigStyles}>

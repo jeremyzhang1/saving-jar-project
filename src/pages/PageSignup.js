@@ -1,9 +1,9 @@
 import React from "react";
 import PageHome from "./PageHome";
-import Login from "../components/Login";
+import Signup from "../components/Signup";
 import fire from "../config/fire";
 
-class PageLogin extends React.Component {
+class PageSignup extends React.Component {
     constructor(props) {
         super(props)
 
@@ -31,10 +31,10 @@ class PageLogin extends React.Component {
     render() {
         return (
             <div>
-                {this.state.user ? <PageHome /> : <Login />}
+                {this.state.user ? <PageHome /> : <Signup />}
             </div>
         );
     }
 }
 
-export default PageLogin;
+export default PageSignup;
