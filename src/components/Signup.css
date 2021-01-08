@@ -68,7 +68,7 @@ img {
 
 .login-input {
   font-size: 20px;
-  margin: 20px;
+  margin: 15px;
   height: 40px;
   border-radius: 20px;
   width: 50%;
@@ -88,7 +88,6 @@ img {
   border: none;
   padding: 0!important;
   color: #838282;
-  text-decoration: underline;
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
@@ -97,6 +96,7 @@ img {
 h1 {
   font-size: 50px;
   color: #3A693F;
+  margin: 15px;
 }
 
 h2 {

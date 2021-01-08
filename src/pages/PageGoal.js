@@ -362,9 +362,6 @@ class PageGoal extends Component {
                   <p class = "descr"> You and {users.length} other users currently working on this goal | {this.state.userscompleted} users have completed this goal</p>
                   <p class = "descr"> <b>Goal Description:</b> {this.state.description}</p>
                 </div>
-
-        <button class = "uploadbut" > Add Money to My Goal</button>
-        <GoalPig others = {users} thisUser = {userSample}/>
                 <div class = "boxStyle">
                   <h2>My Progress:</h2>
                   <GoalPig others = {users} thisUser = {userSample}/>
