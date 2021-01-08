@@ -1,7 +1,7 @@
 import React from "react";
 import {Helmet} from 'react-helmet';
 import GoalPig from '../components/progressPigs/GoalPig.js'
-import "./PageGoal.css";
+//import "./PageGoal.css";
 //import '/Users/carolynqu/c1_materials/saving-jar-project/src/pages/PageGoal.css'
 
 const users = [
