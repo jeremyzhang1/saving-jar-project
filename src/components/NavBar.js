@@ -19,9 +19,9 @@ class BootstrapNavbar extends React.Component{
         return(
             <div>
                 <Router>
-                    <Navbar bg="dark" variant="pills" expand="lg" sticky="top" style={{position: "absolute", width: "100%"}}>
+                    <Navbar bg="dark" variant="pills" expand="lg" sticky="top">
+                        <Nav className='navigation' class="navbar navbar-expand-md navbar-fixed-top">
 
-                        <Nav className='navigation' class="navbar navbar-expand-md fixed-top">
                             <Nav.Link href="/">Logout</Nav.Link> 
                             <Nav.Link id="ghome" href="/home"  >Home</Nav.Link>
                             <Nav.Link id="bgroup" href="/groups" >Find a Group</Nav.Link>
