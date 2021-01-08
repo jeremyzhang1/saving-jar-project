@@ -5,13 +5,13 @@ import pigImage from "../assets/logo-pig.png"
 
 class Login extends React.Component {
 
-    login(){
+    signUp(){
         var username = document.getElementById("email").value
         var password = document.getElementById("password").value
 
-        fire.auth().signInWithEmailAndPassword(username, password)
+        fire.auth().createUserWithEmailAndPassword(username, password)
             .then((u) => {
-                console.log("Successful log in")
+                console.log("Successful signed up")
             })
             .catch((err) => {
                 console.log("Error: " + err.toString())
