@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import {Helmet} from 'react-helmet';
 import GoalPig from '../components/progressPigs/GoalPig.js'
 import "./PageGoal.css";
@@ -35,18 +35,6 @@ const goalDetails = {
   userscompleted: 10,
 }
 
-const createButtonStyle = {
-  backgroundColor: "#0e71a9",
-  color: "#ffffff",
-  fontSize: 16,
-  height: 40,
-  width: 300,
-  borderRadius: "20px",
-  marginBottom: "10px"
-}
-
-
-
 function PageGoal() {
   return (
     <div class = "larger">
@@ -71,7 +59,7 @@ function PageGoal() {
         </div>
 
         <button class = "uploadbut" > Add Money to My Goal</button>
-        <GoalPig others = {users} thisUser = {userSample}/>
+        <GoalPig others = {users} thisUser = {userSample} style={{marginBottom: "400px"}}/>
 
       </div>
     </div>

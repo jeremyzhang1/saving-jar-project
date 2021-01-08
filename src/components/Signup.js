@@ -5,13 +5,13 @@ import pigImage from "../assets/logo-pig.png"
 
 class Login extends React.Component {
 
-    login(){
+    signUp(){
         var username = document.getElementById("email").value
         var password = document.getElementById("password").value
 
-        fire.auth().signInWithEmailAndPassword(username, password)
+        fire.auth().createUserWithEmailAndPassword(username, password)
             .then((u) => {
-                console.log("Successful log in")
+                console.log("Successful signed up")
             })
             .catch((err) => {
                 console.log("Error: " + err.toString())
@@ -23,11 +23,7 @@ class Login extends React.Component {
             <div>
                 <div class="split left">
                     <div class="inner-left">
-                        <div class="centered">
-                        <img src={pigImage}></img>
-                        <h2> Start Saving Smarter </h2>
-                        </div>
-                        
+                        <img class="centered" src={pigImage}></img>
                     </div>
                 </div>
                 <div class="split right">
@@ -35,10 +31,10 @@ class Login extends React.Component {
                         <div class="login-form centered">
                         <h1> Welcome Back! </h1>
                         <div>
-                            <input class="login-input" id="email" placeholder="Your Email" type="text" />
+                            <input class="login-input" id="email" placeholder="  Your Email" type="text" />
                         </div>
                         <div>
-                            <input class="login-input" id="password" placeholder="Password" type="text" />
+                            <input class="login-input" id="password" placeholder="  Password" type="text" />
                         </div>
                         <button class="login-button" onClick={this.login}>Login</button>
                         <p class="sign-up"> Don't have an account? <button class="signup-link" onClick={this.signUp}>Sign up here</button> </p>

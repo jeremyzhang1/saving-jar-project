@@ -41,6 +41,7 @@ const ProgressBar = (props) => {
   const compStyles = {
     position: 'absolute',
     textAlign: 'center',
+    marginLeft: 50,
     top: '37%',
     left: '33%'
     
@@ -48,12 +49,14 @@ const ProgressBar = (props) => {
   const savedStyles = {
     position: 'absolute',
     textAlign: 'center',
+    marginLeft: 50,
     top: '47%',
     left: '33%'
   }
   const totalStyles = {
     position: 'absolute',
     textAlign: 'center',
+    marginLeft: 50,
     top: '57%',
     left: '33%'
   }
