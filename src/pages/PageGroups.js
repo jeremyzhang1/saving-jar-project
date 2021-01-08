@@ -1,12 +1,15 @@
 import GroupSearch from '../components/GroupSearch';
 import GroupBox from '../components/GroupBox';
 import { setConfiguration, Container, Row, Col } from 'react-grid-system';
+import {Helmet} from 'react-helmet';
+
 
 setConfiguration({ gutterWidth: 30 });
 
 function PageGroups() {
   const groupStyle={
-    backgroundColor: "#c8e1ef"
+    backgroundColor: "#c8e1ef",
+    padding: "50px"
   }
   const createButtonStyle = {
     backgroundColor: "#0e71a9",
@@ -20,6 +23,10 @@ function PageGroups() {
 
   return (
     <div style={groupStyle}>
+      <Helmet>
+          <style>{'body { background-color: #C8E1EF; }'}</style>
+      </Helmet>
+      
         <h1>Find Goals</h1>
         <GroupSearch/>
         <button style={createButtonStyle}>+ Create a Goal</button>

@@ -1,5 +1,7 @@
 import React from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
+import '../components/PageHome.css';
+import {Helmet} from 'react-helmet';
 import { Link} from 'react-router-dom';
 
 
@@ -44,7 +46,11 @@ const testData =
 
 function PageHome() {
   return (
-    <div>
+    <div className = "pageHome">
+      <Helmet>
+          <style>{'body { background-color:  #CBE2C5; }'}</style>
+      </Helmet>
+
       <h1>Dashboard</h1>
       <div> 
         <h2>Overview</h2>

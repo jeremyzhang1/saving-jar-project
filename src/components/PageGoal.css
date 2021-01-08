@@ -1,0 +1,13 @@
+body {
+    background-color: #C8E1EF;
+}
+
+button {
+    background-color: "#0e71a9";
+    color: "#ffffff";
+    font-size: 16;
+    height: 30;
+    width: 160;
+    border-radius: "20px";
+    margin-bottom: "10px";
+}
