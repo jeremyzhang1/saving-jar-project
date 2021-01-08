@@ -1,0 +1,26 @@
+.minipig {
+   position: absolute;
+   background-size: cover;
+   width: 6em;
+   height: 6em;
+   margin-left: -3em;
+   bottom: 1em;
+}
+
+.minipig .hoverbox {
+    opacity: 0;
+    visibility: hidden;
+    background-color: #C8E1EF;
+    border-radius: 0.5em;
+    padding: 0.3em;
+    width: 100px;
+    height: 55px;
+    text-align: center;
+    position: absolute;
+    bottom: 5em;
+    transition: opacity 0.2s;
+}
+.minipig:hover .hoverbox {
+    visibility: initial;
+    opacity: 1;
+}

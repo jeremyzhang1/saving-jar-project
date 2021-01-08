@@ -1,4 +1,4 @@
-//sets up the progress bar to be used oh the dashboard and the groups page  
+//sets up the progress bar to be used oh the dashboard page  
 import React from "react";
 import pigImage from "../../assets/pig.png";
 //copied from https://dev.to/ramonak/react-how-to-create-a-custom-progress-bar-component-in-5-minutes-2lcl TODO: EDIT
