@@ -6,12 +6,12 @@ const ProgressBar = (props) => {
   const {bgcolor, completed} = props;
   const containerStyles = {
     height: 20,
-    width: '80%',
+    width: '90%',
     backgroundColor: "#e0e0de",
     borderRadius: 50,
     marginLeft: 50,
     marginRight: 50,
-    marginTop: '-7%',
+    marginTop: '-10%',
     marginBottom: '10px',
   }
   const fillerStyles = {
@@ -34,45 +34,49 @@ const ProgressBar = (props) => {
     width: '40%',
     position: 'relative',
     textAlign: 'center',
-    color: 'white',
-    left: `${completed-30}%`
+    left: `${completed-20}%`,
+    marginTop: "-7%"
   }
   const compStyles = {
     position: 'absolute',
     textAlign: 'center',
     marginLeft: 50,
-    top: '37%',
-    left: '33%'
+    marginBottom: 20,
+    top: '45%',
+    left: '35%',
+    color: "white",
+    fontSize: "40px"
     
   }
-  const savedStyles = {
-    position: 'absolute',
-    textAlign: 'center',
+  const statStyles = {
+    // position: 'absolute',
+    textAlign: 'left',
+    color: "#3A693F",
     marginLeft: 50,
-    top: '47%',
-    left: '33%'
+    marginTop: 10,
   }
-  const totalStyles = {
-    position: 'absolute',
-    textAlign: 'center',
-    marginLeft: 50,
-    top: '57%',
-    left: '33%'
+
+  const statGroup = {
+    // position: 'absolute',
+    margin: 20
   }
 
   return (
     <div>
       <div class="container pig-stats" style={pigStyles}>
-              <img src={pigImage} style={pigImgStyles}/>
-              <p class="centered" style={compStyles}> {props.completed}% complete </p>
-              <p class="centered" style={savedStyles}> ${props.current} saved </p>
-              <p class="centered" style={totalStyles}> ${props.total} to go </p>
+          <img src={pigImage} style={pigImgStyles}/>
+          <p class="centered" style={compStyles}> {props.completed}% </p>
       </div>
       <div style={containerStyles}>
         <div style={fillerStyles}>
           <span style={labelStyles}>{`${completed}%`}</span>
         </div>
       </div>
+      <div style={statGroup}>
+        <p class="" style={statStyles}> ${props.current} saved </p>
+        <p class="" style={statStyles}> ${props.total} to go </p>
+      </div>
+      
     </div>
   );
 };

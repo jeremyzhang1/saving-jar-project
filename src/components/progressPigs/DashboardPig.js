@@ -38,9 +38,9 @@ const DashboardPig = (props) => {
         <div class="dropdown">
           <button class="dropbtn">Manage</button>
           <div class="dropdown-content">
-            <a href="#">Add Money</a>
-            <a href="#">Edit Goal</a>
-            <a href="#">See Group</a>
+            <a href="">Add Money</a>
+            <a href="">Edit Goal</a>
+            <a href="">See Group</a>
           </div>
         </div>
       </div>

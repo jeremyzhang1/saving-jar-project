@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DashboardPig from "../components/progressPigs/DashboardPig.js";
 import { Link } from 'react-router-dom';
-import '../components/PageHome.css';
+import './PageHome.css';
 import { Helmet } from 'react-helmet';
 
 
@@ -197,22 +197,26 @@ class PageHome extends Component {
                 <h1 style={heading}>My Dashboard</h1>
                 <div class="rectangle" style={whiteBack}>
                     <div style={{ margin: "50px" }}>
-                        <h2>Overview</h2>
+                        <h2 style={goalHeader}>Overview</h2>
                         <p> Total Savings: ${this.state.totalSaved}</p>
                         <p> uncategoried money: ${this.state.totalUncat}</p>
-                        <button style={smallButtonStyle} class="green"> Move Money to Goal</button>
-                        <button style={smallButtonStyle} class="green"> Upload Money</button>
+                        <button style={smallButtonStyle} class="button green"> Move Money to Goal</button>
+                        <button style={smallButtonStyle} class="button green"> Upload Money</button>
                     </div>
 
                 </div>
 
-                <div>
-                    <h1> My Goals</h1>
-                    <Link to="/groups">
-                        <button type="button">
-                            Join a Goal
-                  </button>
-                    </Link>
+                <div style={whiteBack}>
+                    <div style={goalHeader}>
+                      <h1> My Goals</h1>
+                      <Link to="/groups">
+                          <button class="btn" type="button">
+                              Join a Goal
+                    </button>
+                      </Link>
+                    </div>
+                    <hr style={lineStyle}></hr>
+                    
                     {/*userData.map((item, index) => (
                   <DashboardPig key ={index}  
                   bgcolor = {item.bgcolor} 
