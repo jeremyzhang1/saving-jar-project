@@ -7,9 +7,19 @@ import ProgressBar from "./ProgressBar.js";
 
 const DashboardPig = (props) => {
   const { bgcolor, total, current, completed} = props;
+
+  const groupStyle = {
+    padding: "10px",
+  }
+
+  const titleStyle = {
+    textAlign: "left",
+    margin: "10px"
+  }
+
   return (
-    <div>
-      <h1 class="align-left"> Disneyland </h1>
+    <div style={groupStyle}>
+      <h1 style={titleStyle}> Disneyland </h1>
       <ProgressBar bgcolor={props.bgcolor} completed={props.completed} />
     </div>
   );

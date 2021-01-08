@@ -58,12 +58,16 @@ const whiteBack = {
   maxWidth: "1200px",
   justifyContent:"center",
   alignItems: "center",
+  textAlign: "center",
+  width: "70%",
+  margin: "auto",
+  marginTop: "50px",
+  padding: "30px",
+  borderRadius: "50px"
 }
 
 const heading = {
-  fontSize: 80,
-  
-
+  fontSize: 70,
 }
 
 // data to include: total amount, percentage, 
@@ -87,7 +91,7 @@ function PageHome() {
         
       </div>
       
-      <div>
+      <div class="goals" style={whiteBack}>
         <h1> My Goals</h1>
         <Link to="/groups">
           <button type="button">

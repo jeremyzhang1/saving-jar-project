@@ -37,7 +37,11 @@ class Login extends React.Component {
             <div>
                 <div class="split left">
                     <div class="inner-left">
-                        <img class="centered" src={pigImage}></img>
+                        <div class="centered">
+                        <img src={pigImage}></img>
+                        <h2> Start Saving Smarter </h2>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="split right">
@@ -45,10 +49,10 @@ class Login extends React.Component {
                         <div class="login-form centered">
                         <h1> Welcome Back! </h1>
                         <div>
-                            <input class="login-input" id="email" placeholder="  Your Email" type="text" />
+                            <input class="login-input" id="email" placeholder="Your Email" type="text" />
                         </div>
                         <div>
-                            <input class="login-input" id="password" placeholder="  Password" type="text" />
+                            <input class="login-input" id="password" placeholder="Password" type="text" />
                         </div>
                         <button class="login-button" onClick={this.login}>Login</button>
                         <p class="sign-up"> Don't have an account? <button class="signup-link" onClick={this.signUp}>Sign up here</button> </p>

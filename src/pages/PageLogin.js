@@ -1,6 +1,6 @@
 import React from "react";
 
-import Home from "../components/Home";
+import PageHome from "../pages/PageHome";
 import Login from "../components/Login";
 import fire from "../config/fire";
 
@@ -32,7 +32,7 @@ class PageLogin extends React.Component {
     render() {
         return (
             <div>
-                {this.state.user ? <Home /> : <Login />}
+                {this.state.user ? <PageHome /> : <Login />}
             </div>
         );
     }
