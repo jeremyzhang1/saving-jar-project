@@ -18,7 +18,11 @@
     font-size: 17px;
   }
 
-.navbar a:hover {
-    color: rgb(255, 255, 255);
+#bgroup a:hover {
+    color: rgb(0, 122, 236);
+  }
+
+  #ghome a:hover {
+    color: rgb(8, 90, 26);
   }
 

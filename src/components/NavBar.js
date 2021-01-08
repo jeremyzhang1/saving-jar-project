@@ -23,8 +23,8 @@ class BootstrapNavbar extends React.Component{
 
                         <Nav className='navigation' class="navbar navbar-expand-md fixed-top">
                             <Nav.Link href="/">Logout</Nav.Link> 
-                            <Nav.Link href="/home">Home</Nav.Link>
-                            <Nav.Link href="/groups">Find a Group</Nav.Link>
+                            <Nav.Link id="ghome" href="/home"  >Home</Nav.Link>
+                            <Nav.Link id="bgroup" href="/groups" >Find a Group</Nav.Link>
                             <Nav.Link href="/goal">Goal Page</Nav.Link>
                         </Nav>
                     </Navbar>
