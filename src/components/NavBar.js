@@ -7,6 +7,7 @@ import {
   } from "react-router-dom";
 import { Navbar,Nav} from 'react-bootstrap'
 import PageLogin from '../pages/PageLogin';
+import PageSignup from '../pages/PageSignup';
 import PageHome from '../pages/PageHome';
 import PageGroups from '../pages/PageGroups';
 import PageGoal from '../pages/PageGoal';
@@ -39,6 +40,7 @@ class BootstrapNavbar extends React.Component{
                         <Route exact path="/home" component={PageHome} />
                         <Route exact path="/groups" component={PageGroups} />
                         <Route exact path="/goal" component={PageGoal} />
+                        <Route exact path="/signup" component={PageSignup} />
                         <Route component={() => this.logout} />
                     </Switch>
                 </Router>

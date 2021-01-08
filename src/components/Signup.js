@@ -2,8 +2,10 @@ import React from "react"
 import fire from "../config/fire"
 import "./Login.css"
 import pigImage from "../assets/logo-pig.png"
+import {Link} from 'react-router-dom'
 
-class Login extends React.Component {
+
+class Signup extends React.Component {
 
     signUp(){
         var username = document.getElementById("email").value
@@ -29,16 +31,30 @@ class Login extends React.Component {
                 <div class="split right">
                     <div class="inner-right">
                         <div class="login-form centered">
-                        <h1> Welcome Back! </h1>
+                        <h1> Join Oink! </h1>
+
+                        <div>
+                            <input class="login-input" id="name" placeholder="  Your Name" type="text" />
+                        </div>
+
+
                         <div>
                             <input class="login-input" id="email" placeholder="  Your Email" type="text" />
                         </div>
+
+
                         <div>
                             <input class="login-input" id="password" placeholder="  Password" type="text" />
                         </div>
-                        <button class="login-button" onClick={this.login}>Login</button>
-                        <p class="sign-up"> Don't have an account? <button class="signup-link" onClick={this.signUp}>Sign up here</button> </p>
-                        </div>
+                        <button class="login-button" onClick={this.signUp}>Sign Up! </button>
+                        <p class="sign-up"> Already have an account? 
+                            <Link to="/login">
+                                <button class = 'signup-link' type="button">
+                                Log in here
+                                </button>
+                            </Link> 
+                        </p>                        
+                    </div>
                 </div>
             </div>
             </div>
@@ -47,4 +63,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login
+export default Signup
